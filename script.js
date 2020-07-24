@@ -14,17 +14,12 @@ alert (`"Найбільша цифра: ${getMaxDigit(number)}"`);
 
 
 //function 3
-/*const enterName = +prompt("Введіть ім'я");
+const enterName = prompt("Введіть ім'я");
 function getName (fix) {
-    fix = fix.split('');
-    const firstLetter = fix[0].toUpperCase();
-    const otherLetters = fix.slice(1).toLowerCase();
-    const firstLetterFinal = firstLetter.join();
-    const otherLettersFinal = otherLetters.join();
-    const formatName = firstLetterFinal + otherLettersFinal;
+    const formatName = fix[0].toUpperCase() + fix.slice(1).toLowerCase();
     return formatName;
 }
-alert (`"Форматоване ім'я: ${getName (enterName)}"`);*/
+alert (`"Форматоване ім'я: ${getName(enterName)}"`);
 
 
 
@@ -53,37 +48,37 @@ else {
 alert (`"Випадкове проміжне число: ${getRandomNumber (firstNumber, secondNumber)}"`);
 
 //function 6
-/*const enterWord = +prompt ("Введіть слово");
-const enterLetter = +prompt ("Виберіть літеру в слові");
+const enterWord = prompt ("Введіть слово");
+const enterLetter = prompt ("Виберіть літеру в слові");
 function countLetter (yourWord, yourLetter) {
     yourWord = yourWord.toLowerCase();
     yourLetter = yourLetter.toLowerCase();
     let sumLetters = 0;
-    for (let i = 0; i < yourWord.length(); i++) {
+    for (let i = 0; i < yourWord.length; i++) {
       if (yourLetter === yourWord[i]) {
         sumLetters++;
       }
     }
     return sumLetters;
 }
-alert (`"Кількість цієї літери в слові: ${countLetter (enterWord, enterLetter)}"`);*/
+alert (`"Кількість цієї літери в слові: ${countLetter (enterWord, enterLetter)}"`);
 
 //function 7
-/*const sumMoney = +prompt ("Введіть суму");
-const currency = +prompt ("Введіть валюту $ або UAH");
-function convertCurrency (money, current) {
+const enterMoney = prompt ("Введіть суму + валюту $ або UAH");
+function convertCurrency (sumMoney) {
+  const small = sumMoney.toLowerCase();
   const dollarToUah = 28;
-  if (current == "$") {
-    return (money * dollarToUah);
+  if (small.indexOf("$") !== -1) {
+    return (small.replace('$'," ") * dollarToUah + 'UAH');
   }
-  else if (current == "UAH" || current == "uah"){
-    return (money / dollarToUah);
+  else if (small.indexOf("uah") !== -1) {
+    return (small.replace('uah', " ") / dollarToUah + '$');
   }
   else {
     return ("Будь ласка, введіть $ або UAH");
 }
 }
-alert (`"Сума: ${convertCurrency (sumMoney, currency)}"`);*/
+alert (`"Сума: ${convertCurrency(enterMoney)}"`);
 
 //function 8
 const passAmount = +prompt ("Введіть цифру - кількість символів");
