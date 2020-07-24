@@ -42,8 +42,13 @@ alert (`"Зарплата після відрахування податку: ${
 const firstNumber = +prompt ("Введіть початкове число");
 const secondNumber = +prompt ("Введіть кінцеве число, більше за попереднє");
 function getRandomNumber (initial, ending) {
+  if (initial < ending) {
   const randomDigit = initial + Math.round(Math.random() * (ending-initial));
   return randomDigit;
+}
+else {
+  return ("Помилка: введіть кінцеве число, більше за попереднє");
+}
 }
 alert (`"Випадкове проміжне число: ${getRandomNumber (firstNumber, secondNumber)}"`);
 
