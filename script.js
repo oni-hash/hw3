@@ -1,11 +1,14 @@
 //function 1
 const number = +prompt("Введіть багатозначне число");
-function getMaxDigit(number) {
-  number = String(number).split('')
+while (Number.isNaN(number)) {
+  number = +prompt("Введіть число!");
+}
+function getMaxDigit(getnumber) {
+  getnumber = String(getnumber).split('');
   let calculation = 0;
-  for (let a = 0; a < number.length; a++){
-    if (calculation < number[a]) {
-    calculation = number[a];
+  for (let a = 0; a < getnumber.length; a++){
+    if (calculation < getnumber[a]) {
+    calculation = getnumber[a];
   }
 }
 return calculation;
@@ -34,16 +37,15 @@ function getSalary (sum) {
 alert (`"Зарплата після відрахування податку: ${getSalary (salary)}"`);
 
 //function 5
+
 const firstNumber = +prompt ("Введіть початкове число");
 const secondNumber = +prompt ("Введіть кінцеве число, більше за попереднє");
+while (secondNumber < firstNumber) {
+secondNumber = +prompt ("Введіть кінцеве число, більше за попереднє");
+}
 function getRandomNumber (initial, ending) {
-  if (initial < ending) {
   const randomDigit = initial + Math.round(Math.random() * (ending-initial));
   return randomDigit;
-}
-else {
-  return ("Помилка: введіть кінцеве число, більше за попереднє");
-}
 }
 alert (`"Випадкове проміжне число: ${getRandomNumber (firstNumber, secondNumber)}"`);
 
