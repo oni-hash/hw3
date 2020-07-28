@@ -19,27 +19,25 @@ alert (`"Найбільша цифра: ${getMaxDigit(number)}"`);
 //function 3
 const enterName = prompt("Введіть ім'я");
 function getName (fix) {
-    const formatName = fix[0].toUpperCase() + fix.slice(1).toLowerCase();
-    return formatName;
+    return (fix[0].toUpperCase() + fix.slice(1).toLowerCase());
 }
 alert (`"Форматоване ім'я: ${getName(enterName)}"`);
 
 
 
 //function 4
-const salary = +prompt("Введіть свою зарплату");
+const salary = Number(prompt("Введіть свою зарплату"));
 function getSalary (sum) {
     const tax = 19.5;
     const yourTax = (sum/100)*tax;
-    const cash = sum - yourTax;
-    return cash;
+     return (sum - yourTax);
 }
 alert (`"Зарплата після відрахування податку: ${getSalary (salary)}"`);
 
 //function 5
 
-const firstNumber = +prompt ("Введіть початкове число");
-const secondNumber = +prompt ("Введіть кінцеве число, більше за попереднє");
+const firstNumber = Number(prompt("Введіть початкове число"));
+const secondNumber = Number(prompt("Введіть кінцеве число, більше за попереднє"));
 while (secondNumber < firstNumber) {
 secondNumber = +prompt ("Введіть кінцеве число, більше за попереднє");
 }
@@ -74,7 +72,7 @@ function convertCurrency (sumMoney) {
     return (small.replace('$'," ") * dollarToUah + 'UAH');
   }
   else if (small.indexOf("uah") !== -1) {
-    return (small.replace('uah', " ") / dollarToUah + '$');
+    return (Math.round(small.replace('uah', " ") / dollarToUah) + '$');
   }
   else {
     return ("Будь ласка, введіть $ або UAH");
@@ -83,13 +81,12 @@ function convertCurrency (sumMoney) {
 alert (`"Сума: ${convertCurrency(enterMoney)}"`);
 
 //function 8
-const passAmount = +prompt ("Введіть цифру - кількість символів");
+const passAmount = Number(prompt("Введіть цифру - кількість символів"));
 function getRandomPassword (amount) {
 let zero = "0";
 let zeroGroup = zero.repeat(amount);
 let comma = "1" + zeroGroup;
 let multiplication = Number(comma);
-let password = Math.round(Math.random() * multiplication);
-return password;
+return (Math.round(Math.random() * multiplication));
 }
 alert (`"Пароль: ${getRandomPassword (passAmount)}"`);
