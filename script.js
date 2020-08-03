@@ -82,11 +82,11 @@ alert (`"Сума: ${convertCurrency(enterMoney)}"`);
 
 //function 8
 const passAmount = Number(prompt("Введіть цифру - кількість символів"));
-function getRandomPassword (amount) {
-let zero = "0";
-let zeroGroup = zero.repeat(amount);
-let comma = "1" + zeroGroup;
-let multiplication = Number(comma);
+function getRandomPassword (amount = 222222) {
+const zero = "0";
+const zeroGroup = zero.repeat(amount);
+const comma = "1" + zeroGroup;
+const multiplication = Number(comma);
 return (Math.round(Math.random() * multiplication));
 }
 alert (`"Пароль: ${getRandomPassword (passAmount)}"`);
